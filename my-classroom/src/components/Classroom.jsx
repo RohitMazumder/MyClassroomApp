@@ -7,15 +7,15 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import ClassroomService from "../service/classroom";
 import socketIOClient from "socket.io-client";
-import Typography from "@material-ui/core/Typography";
 
 import UserList from "./UserList";
 import ToolsPanel from "./ToolsPanel";
+import ChatDrawer from "./ChatDrawer";
 
 import styles from "../assets/styles/dashboardStyles";
 const useStyles = makeStyles(styles);
 
-//const socket = socketIOClient("http://localhost:4010"); //development;
+// const socket = socketIOClient("http://localhost:4010"); //development;
 
 const socket = socketIOClient(); //production
 
@@ -74,6 +74,8 @@ class Board extends Component {
       username: null,
       room: null,
       userList: [],
+      chatMobileOpen: false,
+      messages: [],
     };
 
     this.whiteboard = React.createRef();
@@ -117,6 +119,15 @@ class Board extends Component {
           data.width
         );
       }
+    });
+
+    socket.on("message", (message) => {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          messages: [...prevState.messages, message],
+        };
+      });
     });
   }
 
@@ -219,6 +230,14 @@ class Board extends Component {
     });
   };
 
+  sendMessage = (message) => {
+    socket.emit("message", {
+      message,
+      username: this.state.username,
+      room: this.state.room,
+    });
+  };
+
   onMouseDown = (e) => {
     this.setState(() => {
       return {
@@ -301,8 +320,16 @@ class Board extends Component {
     });
   };
 
+  toggleChatDrawer = () => {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        chatMobileOpen: !prevState.chatMobileOpen,
+      };
+    });
+  };
+
   clearBoard = () => {
-    console.log(this.state.room);
     socket.emit("clear", this.state.room);
   };
 
@@ -313,20 +340,6 @@ class Board extends Component {
   render() {
     return (
       <div>
-        <Typography
-          style={{
-            position: "fixed",
-            top: "10px",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            margin: "0 auto",
-          }}
-          variant="h4"
-          gutterBottom
-        >
-          {this.state.room}
-        </Typography>
         <canvas
           height={`${this.state.windowHeight}px`}
           width={`${this.state.windowWidth}px`}
@@ -337,14 +350,19 @@ class Board extends Component {
             left: 0,
           }}
         />
-
+        <ChatDrawer
+          messages={this.state.messages}
+          chatMobileOpen={this.state.chatMobileOpen}
+          toggleChatDrawer={this.toggleChatDrawer}
+          sendMessage={this.sendMessage}
+        />
         <UserList userList={this.state.userList} />
-
         <ToolsPanel
           clearBoard={this.clearBoard}
           currentColor={this.state.currentColor}
           selectColor={this.selectColor}
           setLineWidth={this.setLineWidth}
+          toggleChatDrawer={this.toggleChatDrawer}
           leave={this.leave}
         />
       </div>

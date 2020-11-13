@@ -16,6 +16,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
+import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 
 import styles from "../assets/styles/toolsPanelStyles";
 const useStyles = makeStyles(styles);
@@ -48,9 +49,8 @@ export default function ToolsPanel(props) {
     history.push("/home");
   };
 
-  return (
-    <React.Fragment>
-      <CssBaseline />
+  function createColorPickerDialog() {
+    return (
       <Dialog
         onClose={colorPickerHandler}
         aria-labelledby="simple-dialog-title"
@@ -68,7 +68,11 @@ export default function ToolsPanel(props) {
       >
         <CirclePicker onChange={props.selectColor} color={props.currentColor} />
       </Dialog>
+    );
+  }
 
+  function createLeaveRoomConfirmationDialog() {
+    return (
       <Dialog
         open={openLeaveRoomConfirmation}
         onClose={leaveRoomConfirmationHandler}
@@ -99,10 +103,22 @@ export default function ToolsPanel(props) {
           </Button>
         </DialogActions>
       </Dialog>
+    );
+  }
 
+  function createAppBar() {
+    return (
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.grow} />
+          <IconButton
+            edge="end"
+            onClick={props.toggleChatDrawer}
+            className={classes.chatButton}
+            aria-label="line-width-change-large"
+          >
+            <ChatBubbleIcon fontSize="large" />
+          </IconButton>
           <IconButton
             edge="end"
             onClick={setLineWidthHandler(6)}
@@ -143,6 +159,15 @@ export default function ToolsPanel(props) {
           </IconButton>
         </Toolbar>
       </AppBar>
+    );
+  }
+
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      {createColorPickerDialog()}
+      {createLeaveRoomConfirmationDialog()}
+      {createAppBar()}
     </React.Fragment>
   );
 }

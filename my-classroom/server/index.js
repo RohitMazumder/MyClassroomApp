@@ -42,6 +42,10 @@ io.sockets.on("connection", (socket) => {
     socket.in(data.room).emit("drawing", data);
   });
 
+  socket.on("message", (message) => {
+    io.in(message.room).emit("message", message);
+  });
+
   socket.on("leaveroom", (data) => {
     addedToList = false;
     users = users.filter((user) => {
@@ -63,7 +67,6 @@ io.sockets.on("connection", (socket) => {
   });
 
   socket.on("clear", (clear) => {
-    console.log(clear);
     io.in(clear).emit("cleared", clear);
   });
 

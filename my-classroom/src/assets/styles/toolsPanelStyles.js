@@ -1,7 +1,12 @@
+const drawerWidth = 290;
+
 const toolsPanelStyles = (theme) => ({
   appBar: {
     top: "auto",
     bottom: 0,
+    [theme.breakpoints.up("sm")]: {
+      right: drawerWidth,
+    },
     background: "transparent",
     boxShadow: "none",
   },
@@ -15,6 +20,11 @@ const toolsPanelStyles = (theme) => ({
     backgroundColor: "transparent",
     boxShadow: "none",
     overflow: "hidden",
+  },
+  chatButton: {
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
   },
   toolbar: {
     minHeight: 80,
