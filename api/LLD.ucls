@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="com.rohit.myclassroom.repository.ClassroomRepository" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/repository/ClassroomRepository.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="213" x="1080" y="531"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="com.rohit.myclassroom.repository.UserRepository" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/repository/UserRepository.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="219" x="728" y="531"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" language="java" name="com.rohit.myclassroom.security.jwt.AuthEntryPointJwt" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/security/jwt/AuthEntryPointJwt.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="426" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.rohit.myclassroom.security.jwt.JwtUtils" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/security/jwt/JwtUtils.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="228" x="547" y="248"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.rohit.myclassroom.security.jwt.AuthTokenFilter" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/security/jwt/AuthTokenFilter.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="378" x="825" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.rohit.myclassroom.security.services.UserDetailsServiceImpl" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/security/services/UserDetailsServiceImpl.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="225" x="815" y="248"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.rohit.myclassroom.controllers.AuthController" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/controllers/AuthController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="278" x="507" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.rohit.myclassroom.controllers.ClassroomController" 
+    project="spring-boot-spring-security-jwt-authentication" 
+    file="/spring-boot-spring-security-jwt-authentication/src/main/java/com/rohit/myclassroom/controllers/ClassroomController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="436" x="1080" y="248"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="9">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="10" name="jwtUtils"/>      
+      <multiplicity id="11" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="12">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="13" name="userDetailsService"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="15">    
+    <bendpoint x="516" y="248"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="16" name="userRepository"/>      
+      <multiplicity id="17" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="18">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="19" name="jwtUtils"/>      
+      <multiplicity id="20" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="21">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="22" name="classroomRepository"/>      
+      <multiplicity id="23" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="25" name="userRepository"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="28" name="userRepository"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
